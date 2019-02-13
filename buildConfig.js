@@ -19,6 +19,8 @@ const configs = [
 ];
 
 for (let { placeholder, value } of configs) {
+    console.log(placeholder, value);
+
     defaultConfig = defaultConfig.replace(placeholder, value || '');
 }
 

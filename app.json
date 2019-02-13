@@ -9,7 +9,7 @@
             "url": "https://github.com/beanieboi/nginx-buildpack.git#v0.9"
         },
         {
-            "url": "http://github.com/mozilla/mattermost-heroku.git#v2.2.0"
+            "url": "https://github.com/midyan/mattermost-heroku#v2.3.0"
         }
     ],
     "env": {

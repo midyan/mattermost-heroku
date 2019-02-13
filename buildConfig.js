@@ -1,5 +1,7 @@
 const fs = require('fs');
 
+const configPath = __dirname + '/default-config.json';
+
 let defaultConfig = JSON.stringify(require('./raw-default-config'));
 
 const configs = [
@@ -23,6 +25,6 @@ for (let { placeholder, value } of configs) {
 
 const parsedConfig = JSON.parse(defaultConfig);
 
-console.log(__dirname + '/default-config.json');
-fs.writeFileSync(__dirname + '/default-config.json', JSON.stringify(parsedConfig, null, 4));
-fs.writeFileSync(__dirname + '/default-config-2.json', JSON.stringify(parsedConfig, null, 4));
+if (fs.existsSync(configPath)) fs.unlinkSync(configPath);
+
+fs.writeFileSync(configPath, JSON.stringify(parsedConfig, null, 4));

@@ -1,5 +1,4 @@
 const fs = require('fs');
-const path = require('path');
 
 let defaultConfig = JSON.stringify(require('./raw-default-config'));
 
@@ -19,12 +18,10 @@ const configs = [
 ];
 
 for (let { placeholder, value } of configs) {
-    console.log(placeholder, value);
-
     defaultConfig = defaultConfig.replace(placeholder, value || 'HELLO');
 }
 
 const parsedConfig = JSON.parse(defaultConfig);
 
-console.log(JSON.stringify(parsedConfig, null, 4));
 fs.writeFileSync(__dirname + '/default-config.json', JSON.stringify(parsedConfig, null, 4));
+fs.writeFileSync(__dirname + '/default-config-2.json', JSON.stringify(parsedConfig, null, 4));

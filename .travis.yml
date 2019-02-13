@@ -1,0 +1,14 @@
+sudo: false
+
+language: node_js
+
+node_js: 10.13.0
+
+deploy:
+    # master
+    - provider: heroku
+      api_key:
+          secure: WrlFRdhZawcir1yHh8EwYPLhCOz1JGWEZjqZVx5ewGCI2g0QXiW3QQutO2NtZbWUB/vctydGNO9Nq0cK5AQHGcSOx/aZswA1M4E1Me8fkDd9Eb9NwtzMok8aCQsq1ItWqXuu7FWqluvq8949pFyqtMP+XtOeePSaRklUjjbZ7SCnsyAD7rQu7N067IQDh98Rj3FWnTerj/s0PCoegt65Z4XRMnXJ0/LDzhwY7FrNjA55zzU82WGSKCEwjuBvKqBwGrHUNeFwuIukVCnCYpyVsULRUMYbqhKQitb/qcmXtHXUnyPdpV1fQwn6nfDa+7WToZpf+BGrHuFTYOfZ09aXdtuif3bjLmaHWZCQD7oUVRScFE+0Ldc1N1Dm7f/DwQUJ6KdjukGoSOV3eCDO35KnuNU4DeR+0GNDizSEpmKUF79XjnPemfNQgGaBIVk2LEj0DJ5Ln/vDshJX5gdf/Xsm8vWhblHLADIRl9FhJyrMjUDG85vStQrAUWkrtQmntJSj8GcdmxC4KlKv72S1AhUwXZJI7/ETM3nJ9ZzaMIbNS7MT/+ot1vILUGI3cmjjlZkdAzIXnH5OgsKAGe6fH/BlR4drL89NPJb+sR13tPg2W7wBDDkmss1j3FbwQJ8sWw6uNl8Ns+do9im6VDld4GM4Dkz96+1CcJ0HmK4cty9jjU8=
+      app: connect-test-2
+      on:
+          branch: master

@@ -1,0 +1,12 @@
+{
+    "name": "campai-connect-mattermost",
+    "author": "campai GmbH",
+    "version": "1.0.0",
+    "scripts": {
+       "build": "node buildConfig"
+    },
+    "dependencies": {},
+    "engines": {
+        "node": "10.13.0"
+    }
+}

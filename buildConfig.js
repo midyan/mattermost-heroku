@@ -21,10 +21,10 @@ const configs = [
 for (let { placeholder, value } of configs) {
     console.log(placeholder, value);
 
-    defaultConfig = defaultConfig.replace(placeholder, value || '');
+    defaultConfig = defaultConfig.replace(placeholder, value || 'HELLO');
 }
 
-fs.writeFileSync(
-    __dirname + '/default-config.json',
-    JSON.stringify(JSON.parse(defaultConfig), null, 4),
-);
+const parsedConfig = JSON.parse(defaultConfig);
+
+console.log(JSON.stringify(parsedConfig, null, 4));
+fs.writeFileSync(__dirname + '/default-config.json', JSON.stringify(parsedConfig, null, 4));

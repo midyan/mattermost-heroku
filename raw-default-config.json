@@ -138,7 +138,7 @@
         "FeedbackOrganization": "",
         "SMTPUsername": "",
         "SMTPPassword": "",
-        "SMTPServer": "$SMTP_SERVER",
+        "SMTPServer": "$MM_EMAILSETTINGS_SMTPSERVER",
         "SMTPPort": "2500",
         "ConnectionSecurity": "",
         "InviteSalt": "mtt8hrn4tmo5d8nz91jg3z7gr8xudb4z",

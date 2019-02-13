@@ -13,13 +13,13 @@ const configs = [
     },
     {
         placeholder: '$SMTPServer',
-        value: process.env.SMTPServer,
+        value: process.env.MM_EMAILSETTINGS_SMTPSERVER,
     },
 ];
 
-for (let { placeholder, value } of configs) {
-    defaultConfig = defaultConfig.replace(placeholder, value || 'HELLO');
-}
+// for (let { placeholder, value } of configs) {
+//     defaultConfig = defaultConfig.replace(placeholder, value || 'HELLO');
+// }
 
 const parsedConfig = JSON.parse(defaultConfig);
 

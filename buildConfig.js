@@ -25,6 +25,6 @@ for (let { placeholder, value } of configs) {
 
 const parsedConfig = JSON.parse(defaultConfig);
 
-if (fs.existsSync(configPath)) fs.unlinkSync(configPath);
-
 fs.writeFileSync(configPath, JSON.stringify(parsedConfig, null, 4));
+
+if (!fs.existsSync(configPath)) throw new Error('default config was not created!');

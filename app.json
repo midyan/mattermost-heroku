@@ -17,125 +17,29 @@
             "value": "5.7.1",
             "description": "Mattermost version to install, semver format"
         },
-        "MATTERMOST_TYPE": {
-            "value": "team",
-            "description": "team or enterprise Mattermost"
-        },
-        "MM_SQLSETTINGS_DRIVERNAME": {
-            "value": "postgres",
-            "description": "Database driver"
-        },
-        "MM_SQLSETTINGS_DATASOURCE": {
-            "value": "************ REPLACE THIS MANUALLY ************",
-            "description": "Mattermost and Heroku Postgres don't play nicely together. you will have to copy the DATABASE_URL variable into this one, and make sure you update it if it changes"
-        },
-        "MM_SERVICESETTINGS_LISTENADDRESS": {
-            "value": ":8080",
-            "description": "The port you want Nginx and Mattermost to talk to each other on - Don't change this unless you change the Nginx buildpack too.",
-            "required": true
-        },
-        "MM_TEAMSETTINGS_SITENAME": "Mattermost",
-        "MM_SQLSETTINGS_ATRESTENCRYPTKEY": {
-            "description": "SqlSettings AtRestEncryptKey",
-            "generator": "secret"
-        },
-        "MM_FILESETTINGS_PUBLICLINKSALT": {
-            "description": "FileSettings PublicLinkSalt",
-            "generator": "secret"
-        },
-        "MM_FILESETTINGS_DRIVERNAME": {
-            "description": "FileSettings DriverName - local or amazons3. WARNING: If this isn't amazons3 uploads will disapear at regular intervales as dynos cycle.",
+        "FILE_SETTINGS__DRIVER_NAME": {
+            "description": "The type of file storage to use. Must be local or amazons3. WARNING: If local, files will be periodically wiped when the dyno restarts. Only use local for temporary preview instances.",
             "value": "local"
         },
-        "MM_FILESETTINGS_AMAZONS3ACCESSKEYID": {
-            "description": "FileSettings AmazonS3AccessKeyId - WARNING: If this isn't an amazon s3 key uploads will disapear at regular intervales as dynos cycle.",
+        "FILE_SETTINGS__AMAZON_S3_ACCESS_KEY_ID": {
+            "description": "The access key for your Amazon S3. Only required for driver name amazons3.",
             "required": false,
             "value": ""
         },
-        "MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY": {
-            "description": "FileSettings AmazonS3SecretAccessKey - WARNING: If this isn't an amazon s3 secret uploads will disapear at regular intervales as dynos cycle.",
+        "FILE_SETTINGS__AMAZON_S3_SECRET_ACCESS_KEY": {
+            "description": "The secret access key for your Amazon S3. Only required for driver name amazons3.",
             "required": false,
             "value": ""
         },
-        "MM_FILESETTINGS_AMAZONS3BUCKET": {
-            "description": "FileSettings AmazonS3Bucket - WARNING: If this isn't an amazon s3 bucket uploads will disapear at regular intervales as dynos cycle.",
+        "FILE_SETTINGS__AMAZON_S3_BUCKET": {
+            "description": "The name you selected for your S3 bucket in AWS. Only required for driver name amazons3.",
             "required": false,
             "value": ""
         },
-        "MM_FILESETTINGS_AMAZONS3REGION": {
-            "description": "FileSettings AmazonS3Region",
+        "FILE_SETTINGS__AMAZON_S3_REGION": {
+            "description": "The AWS region you selected when creating your S3 bucket. Refer to AWS Reference Documentation (http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) and choose this variable from the Region column.",
+            "required": false,
             "value": "us-east-1"
-        },
-        "MM_EMAILSETTINGS_INVITESALT": {
-            "description": "EmailSettings InviteSalt",
-            "generator": "secret"
-        },
-        "MM_EMAILSETTINGS_PASSWORDRESETSALT": {
-            "description": "EmailSettings PasswordResetSalt",
-            "generator": "secret"
-        },
-        "MM_LOGSETTINGS_CONSOLELEVEL": {
-            "description": "Console logging level",
-            "value": "DEBUG"
-        },
-        "MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL": {
-            "description": "",
-            "value": "true"
-        },
-        "MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS": {
-            "description": "",
-            "value": "false"
-        },
-        "MM_EMAILSETTINGS_REQUIREEMAILVERIFICATION": {
-            "description": "",
-            "value": "false"
-        },
-        "MM_TEAMSETTINGS_MAXUSERSPERTEAM": {
-            "description": "",
-            "value": "50"
-        },
-        "MM_TEAMSETTINGS_ENABLETEAMCREATION": {
-            "description": "",
-            "value": "false"
-        },
-        "MM_TEAMSETTINGS_ENABLEUSERCREATION": {
-            "description": "",
-            "value": "false"
-        },
-        "MM_EMAILSETTINGS_SMTPUSERNAME": {
-            "description": "",
-            "value": "",
-            "required": false
-        },
-        "MM_EMAILSETTINGS_SMTPPASSWORD": {
-            "description": "",
-            "value": "",
-            "required": false
-        },
-        "MM_EMAILSETTINGS_SMTPSERVER": {
-            "description": "",
-            "value": "",
-            "required": false
-        },
-        "MM_EMAILSETTINGS_SMTPPORT": {
-            "description": "",
-            "value": "",
-            "required": false
-        },
-        "MM_EMAILSETTINGS_CONNECTIONSECURITY": {
-            "description": "",
-            "value": "",
-            "required": false
-        },
-        "MM_SQLSETTINGS_MAXIDLECONNS": {
-            "value": "10",
-            "description": "Maximum number of idle connections held open to the database",
-            "required": true
-        },
-        "MM_SQLSETTINGS_MAXOPENCONNS": {
-            "value": "10",
-            "description": "Maximum number of open connections held open to the database",
-            "required": true
         }
     }
 }

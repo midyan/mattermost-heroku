@@ -14,6 +14,7 @@ trap _term SIGTERM
 ####################
 # Start Mattermost #
 ####################
+echo $(cat ./default-config.json)
 
 bin/platform --config=/app/default-config.json &
 

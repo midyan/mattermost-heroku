@@ -7,7 +7,7 @@ let defaultConfig = JSON.stringify(require('./raw-default-config'));
 const configs = [
     {
         placeholder: '$MM_SQLSETTINGS_DATASOURCE',
-        value: process.env.MM_SQLSETTINGS_DATASOURCE || 'HELLO',
+        value: (process.env.MM_SQLSETTINGS_DATASOURCE || 'HELLO').split('://')[1],
     },
     {
         placeholder: '$ELASTIC_URL',

@@ -30,7 +30,13 @@ console.log(__dirname);
 console.log(process.cwd());
 
 console.log(fs.readdirSync(__dirname));
-
 fs.writeFileSync(configPath, JSON.stringify(parsedConfig, null, 4));
+
+console.log('____________');
+console.log(__dirname);
+
+console.log(process.cwd());
+
+console.log(fs.readdirSync(__dirname));
 
 if (!fs.existsSync(configPath)) throw new Error('default config was not created!');

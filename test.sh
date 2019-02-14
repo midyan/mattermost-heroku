@@ -1,2 +1,2 @@
 
-echo $(cat /app/default-config.json)
+echo $(ls /app)

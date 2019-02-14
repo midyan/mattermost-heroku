@@ -7,7 +7,7 @@ let defaultConfig = JSON.stringify(require('./raw-default-config'));
 const configs = [
     {
         placeholder: '$MM_SQLSETTINGS_DATASOURCE',
-        value: (process.env.MM_SQLSETTINGS_DATASOURCE || 'HELLO').split('://')[1],
+        value: process.env.MM_SQLSETTINGS_DATASOURCE,
     },
     {
         placeholder: '$ELASTIC_URL',
@@ -25,18 +25,6 @@ for (let { placeholder, value } of configs) {
 
 const parsedConfig = JSON.parse(defaultConfig);
 
-console.log(__dirname);
-
-console.log(process.cwd());
-
-console.log(fs.readdirSync(__dirname));
 fs.writeFileSync(configPath, JSON.stringify(parsedConfig, null, 4));
-
-console.log('____________');
-console.log(__dirname);
-
-console.log(process.cwd());
-
-console.log(fs.readdirSync(__dirname));
 
 if (!fs.existsSync(configPath)) throw new Error('default config was not created!');

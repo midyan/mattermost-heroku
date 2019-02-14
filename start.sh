@@ -14,6 +14,8 @@ trap _term SIGTERM
 ####################
 # Start Mattermost #
 ####################
+node ./buildConfig.js
+
 echo $(cat /app/default-config.json)
 
 bin/platform --config=/app/default-config.json &

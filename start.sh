@@ -16,7 +16,7 @@ trap _term SIGTERM
 ####################
 
 echo $(cat /app/default-config.json)
-bin/platform --config="/app/default-config.json" &
+bin/platform --config=/app/default-config.json &
 
 PID=$!
 
